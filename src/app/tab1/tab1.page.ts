@@ -16,6 +16,19 @@ export class Tab1Page {
   addTask()
   {
     this.tasks.push(new Task(this.tasks.length+1, this.taskName));
+    this.taskName = "";
+  }
+
+  updateStatus(task:Task, status:boolean)
+  {
+    task.status = status;
+  }
+
+  deleteTask(task: Task){
+    const index = this.tasks.indexOf(task);
+    if(index !== -1){
+      this.tasks.splice(index, 1);
+    }
   }
 
 }

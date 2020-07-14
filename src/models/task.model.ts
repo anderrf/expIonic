@@ -8,6 +8,6 @@ export class Task
     {
         this.id = id;
         this.name = name;
-        this.status = true;
+        this.status = false;
     }
 }
