@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  private date:Date;
+
+  constructor()
+  {
+    this.date = new Date;
+  }
 
 }
