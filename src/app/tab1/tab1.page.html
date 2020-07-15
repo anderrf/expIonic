@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Lista
+      Lista de tarefas
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,8 +17,9 @@
       </ion-col>
     </ion-row>
     <ion-row>
+      <ion-col></ion-col>
       <ion-col>
-        <ion-button (click)="addTask()"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+        <ion-button (click)="addTask()" expand="block" color="primary"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -29,14 +30,17 @@
               <ion-label>{{task.id}} - {{task.name}}</ion-label>
             </ion-col>
             <ion-col>
-              <ion-button *ngIf="!task.status" (click)="updateStatus(task, true)"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
-              <ion-button *ngIf="task.status" (click)="updateStatus(task, false)"><ion-icon name="close-outline"></ion-icon></ion-button>
+              <ion-button *ngIf="!task.status" (click)="updateStatus(task, true)" expand="block" color="success"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
+              <ion-button *ngIf="task.status" (click)="updateStatus(task, false)"  expand="block" color="warning"><ion-icon name="close-outline"></ion-icon></ion-button>
             </ion-col>
             <ion-col>
-              <ion-button (click)="deleteTask(task)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+              <ion-button (click)="deleteTask(task)" expand="block" color="danger"><ion-icon name="trash-outline"></ion-icon></ion-button>
             </ion-col>
           </ion-item> 
         </ion-list>
+        <ion-item *ngIf="tasks.length == 0">
+          <ion-label>Não há tarefas!</ion-label>
+        </ion-item>
       </ion-col>
     </ion-row>
   </ion-grid>
