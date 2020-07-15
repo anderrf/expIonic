@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Task } from 'src/models/task.model';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tab1',
@@ -10,8 +11,18 @@ export class Tab1Page {
 
   private tasks: Task[] = [];
   private taskName:string;
+  private form:FormGroup;
 
-  constructor() {}
+  constructor(private fb:FormBuilder) 
+  {
+    this.form = this.fb.group({
+      taskName: ['', Validators.compose([
+        Validators.minLength(3),
+        Validators.maxLength(60),
+        Validators.required
+      ])]
+    });
+  }
 
   addTask()
   {

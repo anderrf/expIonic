@@ -8,20 +8,22 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Digite uma tarefa:</ion-label>
-          <ion-input type="text" [(ngModel)]="taskName"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col></ion-col>
-      <ion-col>
-        <ion-button (click)="addTask()" expand="block" color="primary"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
-      </ion-col>
-    </ion-row>
+    <ion-list [formGroup]="form">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Digite uma tarefa (3 a 20 caracteres):</ion-label>
+            <ion-input type="text" [(ngModel)]="taskName" formControlName="taskName" maxlength="20"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-button (click)="addTask()" [disabled]="form.invalid" expand="block" color="primary"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
     <ion-row>
       <ion-col>
         <ion-list>
