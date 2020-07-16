@@ -12,7 +12,7 @@
       <ion-col>
         <ion-item>
           <ion-label position="floating">Selecione a data:</ion-label><br>
-          <ion-input type="date" [(ngModel)]="date"></ion-input>
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="date"></ion-datetime>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -21,46 +21,46 @@
         <ion-list>
           <ion-item>
             <ion-col>
-              <ion-button color="primary" expand="block">-</ion-button>
+              <ion-button color="primary" expand="block"  (click)="addDays(-1)">-</ion-button>
             </ion-col>
             <ion-col>
               <ion-label>Dia</ion-label>
             </ion-col>
             <ion-col>
-              <ion-button color="warning" expand="block">+</ion-button>
+              <ion-button color="warning" expand="block" (click)="addDays(1)">+</ion-button>
             </ion-col>
           </ion-item>
           <ion-item>
             <ion-col>
-              <ion-button color="primary" expand="block">-</ion-button>
+              <ion-button color="primary" expand="block" (click)="addDays(-7)">-</ion-button>
             </ion-col>
             <ion-col>
               <ion-label>Semana</ion-label>
             </ion-col>
             <ion-col>
-              <ion-button color="warning" expand="block">+</ion-button>
+              <ion-button color="warning" expand="block" (click)="addDays(7)">+</ion-button>
             </ion-col>
           </ion-item>
           <ion-item>
             <ion-col>
-              <ion-button color="primary" expand="block">-</ion-button>
+              <ion-button color="primary" expand="block" (click)="addDays(-15)">-</ion-button>
             </ion-col>
             <ion-col>
               <ion-label>Quinzena</ion-label>
             </ion-col>
             <ion-col>
-              <ion-button color="warning" expand="block">+</ion-button>
+              <ion-button color="warning" expand="block"  (click)="addDays(15)">+</ion-button>
             </ion-col>
           </ion-item>
           <ion-item>
             <ion-col>
-              <ion-button color="primary" expand="block">-</ion-button>
+              <ion-button color="primary" expand="block" (click)="addDays(-30)">-</ion-button>
             </ion-col>
             <ion-col>
               <ion-label>Mês</ion-label>
             </ion-col>
             <ion-col>
-              <ion-button color="warning" expand="block">+</ion-button>
+              <ion-button color="warning" expand="block" (click)="addDays(30)">+</ion-button>
             </ion-col>
           </ion-item>
         </ion-list>
