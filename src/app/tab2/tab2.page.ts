@@ -11,6 +11,11 @@ export class Tab2Page {
 
   constructor()
   {
+    this.setToday();
+  }
+
+  setToday()
+  {
     this.date = new Date();
   }
 
