@@ -11,12 +11,17 @@ export class Tab2Page {
 
   constructor()
   {
-    this.date = new Date('DD/MM/YYYY');
+    this.date = new Date();
   }
 
   addDays(day:number)
   {
     this.date.setDate(this.date.getDate() + day);
+  }
+
+  getDate():string
+  {
+    return (this.date.getDate()+"/"+((this.date.getMonth()+1) < 10 ? "0"+(this.date.getMonth()+1):(this.date.getMonth()+1))+"/"+this.date.getFullYear()).toString();
   }
 
 }
