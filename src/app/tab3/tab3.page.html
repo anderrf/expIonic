@@ -38,7 +38,7 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button color="danger" expand="block" [disabled]="form.invalid">Calcular</ion-button>
+          <ion-button color="danger" expand="block" [disabled]="form.invalid" (click)="setValues()">Calcular</ion-button>
         </ion-col>
       </ion-row>
     </ion-list>
