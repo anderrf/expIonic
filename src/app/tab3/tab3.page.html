@@ -15,31 +15,37 @@
         </ion-item>
       </ion-col>
     </ion-row>
+    <ion-list [formGroup]="form">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">A:</ion-label>
+            <ion-input type="number" formControlName="valA" [(ngModel)]="valA"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">B:</ion-label>
+            <ion-input type="number" formControlName="valB" [(ngModel)]="valB"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">C:</ion-label>
+            <ion-input type="number" formControlName="valC" [(ngModel)]="valC"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="danger" expand="block" [disabled]="form.invalid">Calcular</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">A:</ion-label>
-          <ion-input type="number"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">B:</ion-label>
-          <ion-input type="number"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">C:</ion-label>
-          <ion-input type="number"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label position="fixed">Resultado:</ion-label>
-          <ion-input type="text" disabled></ion-input>
+          <ion-input type="text" disabled [value]="getAnswer" placeholder="Resultado"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
