@@ -28,6 +28,7 @@ export class Tab1Page {
   {
     this.tasks.push(new Task(this.tasks.length+1, this.taskName));
     this.taskName = "";
+    this.form.controls.taskName.reset();
   }
 
   updateStatus(task:Task, status:boolean)
